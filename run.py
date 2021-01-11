@@ -16,7 +16,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.image.setPixmap(QtGui.QPixmap("./signs/all_alphabets.jpg"))
     
     def translate1(self):
-        inp = str(self.iuy.toPlainText())
+        inp = str(self.iuy.text())
         length = len(inp)
         i = 0
         while i <= length - 1:
