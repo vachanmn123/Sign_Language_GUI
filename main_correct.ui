@@ -75,19 +75,6 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>67</x>
-      <y>0</y>
-      <width>371</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Enter 1 alphabet at a time to see its sign language equivalent</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="closebutton">
     <property name="geometry">
      <rect>

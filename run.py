@@ -4,9 +4,12 @@ from PyQt5 import QtCore, QtGui, uic, QtWidgets
 import os
 import time
 
-qtCreatorFile = "main_correct.ui" # Enter file here.
+from PyQt5.QtCore import QTimer, QEventLoop
+
+qtCreatorFile = "main_correct.ui"  # Enter file here.
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
+
 
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -20,18 +23,18 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def closeapp(self):
         self.close()
 
-
     def translate1(self):
         inp = str(self.iuy.text())
         length = len(inp)
         i = 0
         while i <= length - 1:
-            if (inp[i]) == 'a' :
+            if (inp[i]) == 'a':
                 self.image.setPixmap(QtGui.QPixmap("./signs/a.jpg"))
-            elif (inp[i]) == 'b' :
+            elif (inp[i]) == 'b':
                 self.image.setPixmap(QtGui.QPixmap("./signs/b.jpg"))
-            elif (inp[i]) == 'c' :
+            elif (inp[i]) == 'c':
                 self.image.setPixmap(QtGui.QPixmap("./signs/c.jpg"))
+                time.sleep(1)
             elif (inp[i]) == 'd':
                 self.image.setPixmap(QtGui.QPixmap("./signs/d.jpg"))
             elif (inp[i]) == 'e':
@@ -78,11 +81,15 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.image.setPixmap(QtGui.QPixmap("./signs/y.jpg"))
             elif (inp[i]) == 'z':
                 self.image.setPixmap(QtGui.QPixmap("./signs/z.jpg"))
+            elif (inp[i]) == ' ':
+                self.image.clear()
             else:
                 self.image.setPixmap(QtGui.QPixmap("./signs/all_alphabets.jpg"))
-
+            loop = QEventLoop()
+            QTimer.singleShot(1500, loop.quit)
+            loop.exec_()
             i = i + 1
-
+        self.image.setPixmap(QtGui.QPixmap("./signs/all_alphabets.jpg"))
 
 
 if __name__ == "__main__":
