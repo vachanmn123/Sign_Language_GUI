@@ -88,6 +88,19 @@
      <string>Enter 1 alphabet at a time to see its sign language equivalent</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="closebutton">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>50</y>
+      <width>88</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Close</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

@@ -1,6 +1,7 @@
 from __future__ import division
 import sys
 from PyQt5 import QtCore, QtGui, uic, QtWidgets
+import os
 import time
 
 qtCreatorFile = "main_correct.ui" # Enter file here.
@@ -14,7 +15,12 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.translate.clicked.connect(self.translate1)
         self.image.setPixmap(QtGui.QPixmap("./signs/all_alphabets.jpg"))
-    
+        self.closebutton.clicked.connect(self.closeapp)
+
+    def closeapp(self):
+        self.close()
+
+
     def translate1(self):
         inp = str(self.iuy.text())
         length = len(inp)
@@ -76,6 +82,8 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.image.setPixmap(QtGui.QPixmap("./signs/all_alphabets.jpg"))
 
             i = i + 1
+
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
